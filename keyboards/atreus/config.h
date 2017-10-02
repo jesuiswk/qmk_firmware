@@ -43,9 +43,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #   define MATRIX_COL_PINS { D7, C6, B5, B4, E6, D4, B6, F6, F7, D6, B7 }
 #endif
 #   define UNUSED_PINS
-#elif defined(ATREUS_TEENSY2)
+#else
 #   define MATRIX_ROW_PINS { D0, D1, D2, D3 }
-#   define MATRIX_COL_PINS { F6, F5, F4, B7, B6, B5, B4, B3, B2, B1, B0 }
+#   define MATRIX_COL_PINS { F0, F1, F4, F5, F6, F7, B7, B3, B2, B1, B0  }
 #   define UNUSED_PINS
 #endif
 

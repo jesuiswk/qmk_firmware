@@ -1,13 +1,14 @@
 
 
-ifdef TEENSY2
+#ifdef TEENSY2
     OPT_DEFS += -DATREUS_TEENSY2
     ATREUS_UPLOAD_COMMAND = teensy_loader_cli -w -mmcu=$(MCU) $(TARGET).hex
-else
-    OPT_DEFS += -DATREUS_ASTAR
-    ATREUS_UPLOAD_COMMAND = while [ ! -r $(USB) ]; do sleep 1; done; \
-                            avrdude -p $(MCU) -c avr109 -U flash:w:$(TARGET).hex -P $(USB)
-endif
+#else
+    #OPT_DEFS += -DATREUS_ASTAR
+    #OPT_DEFS += -DCATERINA_BOOTLOADER
+    #ATREUS_UPLOAD_COMMAND = while [ ! -r $(USB) ]; do sleep 1; done; \
+                            #avrdude -p $(MCU) -c avr109 -U flash:w:$(TARGET).hex -P $(USB)
+#endif
 
 # MCU name
 #MCU = at90usb1287
@@ -25,6 +26,7 @@ MCU = atmega32u4
 #     reflect the processor speed set externally so that the code can use accurate
 #     software delays.
 F_CPU = 16000000
+
 
 #
 # LUFA specific
@@ -45,18 +47,17 @@ ARCH = AVR8
 #     CPU clock adjust registers or the clock division fuses), this will be equal to F_CPU.
 F_USB = $(F_CPU)
 
-# Bootloader
-#     This definition is optional, and if your keyboard supports multiple bootloaders of
-#     different sizes, comment this out, and the correct address will be loaded 
-#     automatically (+60). See bootloader.mk for all options.
-ifdef TEENSY2
-    BOOTLOADER = halfkay
-else
-    BOOTLOADER = caterina
-endif
-
 # Interrupt driven control endpoint task(+60)
 OPT_DEFS += -DINTERRUPT_CONTROL_ENDPOINT
+
+
+# Boot Section Size in *bytes*
+#   Teensy halfKay   512
+#   Teensy++ halfKay 1024
+#   Atmel DFU loader 4096
+#   LUFA bootloader  4096
+#   USBaspLoader     2048
+OPT_DEFS += -DBOOTLOADER_SIZE=4096
 
 
 # Build Options

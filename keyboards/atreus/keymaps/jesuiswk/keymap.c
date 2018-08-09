@@ -9,7 +9,6 @@
 /*#define SOFTWARE_COLEMAK*/
 
 // Reduce the time to decision of a tap or hold
-#define TAPPING_TERM 50
 
 // Each layer gets a name for readability, which is then used in the keymap matrix below.
 #define BOOT  0 // Bootloader (not to be confused with default layer)
@@ -87,8 +86,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [ALPH] = {
   {KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_TRNS, KC_Y,    KC_U,    KC_I,    KC_O,    KC_P},
   {KC_A,    FN_NUMS, FN_FKEY, KC_F,    KC_G,    KC_TRNS, KC_H,    KC_J,    FN_CURS, FN_SYMB, KC_SCLN},
-  {KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    FN_WINBS,KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH},
-  {FN_CTES, KC_TAB,  KC_GRV,  KC_LGUI, FN_SFET, FN_ALTDL,FN_SFSP, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT}
+  {KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,    FN_ALTDL,KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH},
+  {FN_CTES, KC_TAB,  KC_GRV,  KC_LGUI, FN_SFET, FN_WINBS,FN_SFSP, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT}
 },
 [NUMS] = {
   {KC_TRNS, KC_TRNS, KC_TRNS, KC_ASTR, KC_SLSH, KC_TRNS, KC_TRNS, KC_7,    KC_8,    KC_9,    KC_SLSH},

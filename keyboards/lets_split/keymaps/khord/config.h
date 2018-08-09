@@ -37,5 +37,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define EE_HANDS
 
 #define RGBLIGHT_ANIMATIONS
+#undef RGBLED_NUM
+#define RGBLED_NUM 12
 
 #endif

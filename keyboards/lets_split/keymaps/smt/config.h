@@ -31,7 +31,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 /* Select hand configuration */
 
 #define MASTER_LEFT
- //#define MASTER_RIGHT
+ // #define MASTER_RIGHT
 // #define EE_HANDS
 
 #endif
@@ -39,10 +39,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #undef RGBLED_NUM
 #define RGBLIGHT_ANIMATIONS
 #define RGBLED_NUM 12
-#undef RGB_DI_PIN 
-#define RGB_DI_PIN PD3 
+#undef RGB_DI_PIN
+#define RGB_DI_PIN PD3
 
-#define RGBLIGHT_HUE_STEP 8 
-#define RGBLIGHT_SAT_STEP 8 
+#define RGBLIGHT_HUE_STEP 8
+#define RGBLIGHT_SAT_STEP 8
 #define RGBLIGHT_VAL_STEP 8
 
